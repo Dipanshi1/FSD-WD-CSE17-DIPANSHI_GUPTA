@@ -1,201 +1,44 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Bookstore - Homepage</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-    .top {
-      background-color: #645605;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      position: relative;
-    }
-    .top img {
-      position: absolute;
-      left: 20px;
-      top: 10px;
-      height: 50px;
-    }
-    .nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    .nav a:hover {
-      text-decoration: underline;
-    }
-    .frames {
-      display: flex;
-      height: calc(100vh - 100px);
-    }
-    .left {
-      width: 20%;
-      border-right: 1px solid #ccc;
-      background-color: #f2f2f2;
-      padding: 10px;
-    }
-    .right {
-      width: 80%;
-      padding: 20px;
-    }
-    .hidden {
-      display: none;
-    }
-    h2 {
-      color: #003366;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin: 10px 0;
-    }
-    a.link {
-      text-decoration: none;
-      color: #003366;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    a.link:hover {
-      text-decoration: underline;
-    }
-  </style>
-  <script>
-    function showContent(sectionId) {
-      // Hide all sections
-      document.querySelectorAll('.section').forEach(sec => sec.classList.add('hidden'));
-      // Show the selected section
-      document.getElementById(sectionId).classList.remove('hidden');
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
+    <table border="7" width="700px" height="100px" cellspacing="3" cellpadding="5">
+        <tr>
+            <th bgcolor="yellow">Logo</th><th colspan="4" bgcolor="pink">  Web Site Name</th>
+        </tr>
+        <tr  >
+            <th bgcolor="dark green">Home</th><th bgcolor="dark pink">Login</th><th bgcolor="dark brown">Registration</th><th  bgcolor="dark red">catalouge</th><th bgcolor="dark orange">cart</th>
+        </tr>
+        <tr>
+            <td>ECE</td><td> <img src="img5.jpg" alt="book" height="100px" width="100px"></td><td>Book:Ramayan 
+Author : Winston 
+Publication:Wiely </td><td>$50</td><td><button style="background-color:rgb(56, 236, 20);" width="75%"><img src="https://www.clipartmax.com/png/small/130-1303615_shopping-cart-icons-amazon-shopping-cart-icon.png" alt="black shopping cart icon with two wheels and a handle, representing the action of adding items to a cart in an online shopping environment" width="15%">add to card</button></td>
+            
+        </tr>
+         <tr>
+            <td> CSE</td><td><img src="img6.jpg" alt="book " height="100px" width="100px"></td><td>Book :AI Author:S.Russel Publication:Princetonhall 
+</td><td>$50</td><td><button style="background-color:rgb(56, 236, 20);" width="75%" ><img src="https://www.clipartmax.com/png/small/130-1303615_shopping-cart-icons-amazon-shopping-cart-icon.png" alt="Shopping Cart,icons " width="15%">add to card</button></td>
+            
+        </tr>
+         <tr>
+            <td> EEE</td><td><img src="img7.jpg" alt="book" height="100px" width="100px"></td><td>Book : Java 2 Author:Watson Publication:BPBpublications
+</td><td>$70</td><td><button style="background-color:rgb(56, 236, 20);" width="75%"><img src="https://www.clipartmax.com/png/small/130-1303615_shopping-cart-icons-amazon-shopping-cart-icon.png" alt="Shopping Cart,icons " width="15%">add to card</button></td>
+            
+            
+        </tr>
+         <tr>
+            <td> CIVIL</td><td><img src="img8.jpg" alt="book" height="100px" width="100px"></td><td>Book : HTML in 24 hours Author : Sam Peter Publication:Sampublication 
+</td><td>$50</td><td><button style="background-color:rgb(56, 236, 20);" width="75%"><img src="https://www.clipartmax.com/png/small/130-1303615_shopping-cart-icons-amazon-shopping-cart-icon.png" alt="Shopping Cart,icons " width="15%">add to card</button></td>
+            
+            
+        </tr>
 
-  <!-- 🔹 Top Section -->
-  <div class="top">
-    <img src="logo.png" alt="Logo">
-    <h1>ABC College - Online Bookstore</h1>
-    <div class="nav">
-      <a href="#" onclick="showContent('home')">Home</a>
-      <a href="#" onclick="showContent('login')">Login</a>
-      <a href="#" onclick="showContent('register')">Registration</a>
-      <a href="#" onclick="showContent('catalogue')">Catalogue</a>
-      <a href="#" onclick="showContent('cart')">Cart</a>
-    </div>
-  </div>
-
-  <!-- 🔹 Middle Section -->
-  <div class="frames">
-    <!-- Left Frame -->
-    <div class="left">
-      <h3>Departments</h3>
-      <ul>
-        <li><a class="link" onclick="showContent('cse')">CSE</a></li>
-        <li><a class="link" onclick="showContent('ece')">ECE</a></li>
-        <li><a class="link" onclick="showContent('eee')">EEE</a></li>
-        <li><a class="link" onclick="showContent('civil')">CIVIL</a></li>
-      </ul>
-    </div>
-
-    <!-- Right Frame (Dynamic Content) -->
-    <div class="right">
-      <!-- Home Section -->
-      <div id="home" class="section">
-        <h2>Welcome to Our Online Bookstore!</h2>
-        <p>
-          This website allows students to browse and purchase books from different departments
-          such as <b>CSE, ECE, EEE, and Civil Engineering</b>.
-        </p>
-        <p>
-          Navigate using the links above to explore our store. Click on any department
-          from the left panel to view the catalogue for that stream.
-        </p>
-      </div>
-
-      <!-- Login Section -->
-      <div id="login" class="section hidden">
-        <h2>Login</h2>
-        <form>
-          <label>Username:</label><br>
-          <input type="text" placeholder="Enter username"><br><br>
-          <label>Password:</label><br>
-          <input type="password" placeholder="Enter password"><br><br>
-          <button type="submit">Login</button>
-        </form>
-      </div>
-
-      <!-- Registration Section -->
-      <div id="register" class="section hidden">
-        <h2>Registration</h2>
-        <form>
-          <label>Name:</label><br>
-          <input type="text" placeholder="Enter your name"><br><br>
-          <label>Email:</label><br>
-          <input type="email" placeholder="Enter email"><br><br>
-          <label>Password:</label><br>
-          <input type="password" placeholder="Enter password"><br><br>
-          <button type="submit">Register</button>
-        </form>
-      </div>
-
-      <!-- Catalogue Section -->
-      <div id="catalogue" class="section hidden">
-        <h2>Book Catalogue</h2>
-        <p>Select a department from the left to view department-specific books.</p>
-      </div>
-
-      <!-- Cart Section -->
-      <div id="cart" class="section hidden">
-        <h2>Your Cart</h2>
-        <p>No items in cart yet.</p>
-      </div>
-
-      <!-- Department Sections -->
-      <div id="cse" class="section hidden">
-        <h2>CSE Books</h2>
-        <ul>
-          <li>Data Structures - ₹500</li>
-          <li>Operating Systems - ₹450</li>
-          <li>DBMS - ₹550</li>
-        </ul>
-      </div>
-
-      <div id="ece" class="section hidden">
-        <h2>ECE Books</h2>
-        <ul>
-          <li>Electronic Devices - ₹400</li>
-          <li>Digital Circuits - ₹450</li>
-          <li>Communication Systems - ₹500</li>
-        </ul>
-      </div>
-
-      <div id="eee" class="section hidden">
-        <h2>EEE Books</h2>
-        <ul>
-          <li>Electrical Machines - ₹480</li>
-          <li>Control Systems - ₹430</li>
-          <li>Power Electronics - ₹520</li>
-        </ul>
-      </div>
-
-      <div id="civil" class="section hidden">
-        <h2>Civil Books</h2>
-        <ul>
-          <li>Structural Analysis - ₹500</li>
-          <li>Surveying - ₹450</li>
-          <li>Concrete Technology - ₹550</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
+    </table>
+    
 </body>
 </html>
