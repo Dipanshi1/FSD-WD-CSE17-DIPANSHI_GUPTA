@@ -1,2 +1,0 @@
-# FSD-WD-CSE17-DIPANSHI-GUPTA
-This is my repo
