@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABES Engineering College - Admission Form</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f1f6ff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        text-align: center;
+        background: #002b5c;
+        color: white;
+        padding: 15px 0;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 450px;
+        margin: 25px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        border: 2px solid #002b5c;
+    }
+
+    label {
+        font-weight: bold;
+        color: #002b5c;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 15px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #ffc107;
+        color: #002b5c;
+        border: none;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #e0a800;
+    }
+
+    .msg {
+        text-align: center;
+        font-weight: bold;
+        display: none;
+        margin-bottom: 10px;
+    }
+
+    .success { color: green; }
+    .error { color: red; }
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h2>ABES Engineering College</h2>
+    <h4>Admission Form</h4>
+</div>
+
+<div class="container">
+
+    <p id="msg-success" class="msg success">Form submitted successfully!</p>
+    <p id="msg-error" class="msg error">Please fill all fields correctly.</p>
+
+    <form id="abesForm">
+        
+        <label>Full Name *</label>
+        <input type="text" id="name" required>
+
+        <label>Email *</label>
+        <input type="email" id="email" required>
+
+        <label>Mobile Number *</label>
+        <input type="tel" id="phone" minlength="10" maxlength="10" pattern="[0-9]{10}" required>
+
+        <label>Course *</label>
+        
+            <select id="course"><option value="">Select Course</option><option>CSE</option><option>IT</option><option>ECE</option><option>ME</option><option>Civil</option><option>MBA</option></select>
+        
+
+        <label>Address *</label>
+        <textarea id="address" rows="3" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    const form = document.getElementById("abesForm");
+    const success = document.getElementById("msg-success");
+    const error = document.getElementById("msg-error");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        let course = document.getElementById("course").value;
+        let address = document.getElementById("address").value.trim();
+
+        // check 10-digit phone number
+        if (!/^[0-9]{10}$/.test(phone)) {
+            error.innerText = "Mobile number must be 10 digits.";
+            error.style.display = "block";
+            success.style.display = "none";
+            return;
+        }
+
+        if (!name || !email || !phone || !course || !address) {
+            error.innerText = "Please fill all fields correctly.";
+            error.style.display = "block";
+            success.style.display = "none";
+            return;
+        }
+
+        error.style.display = "none";
+        success.style.display = "block";
+
+        setTimeout(() => {
+            form.reset();
+            success.style.display = "none";
+        }, 2000);
+    });
+</script>
+
+</body>
+</html>
