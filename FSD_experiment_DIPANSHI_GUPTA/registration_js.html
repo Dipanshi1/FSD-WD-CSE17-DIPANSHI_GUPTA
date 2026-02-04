@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    form {
+        display: grid;
+        gap: 12px;
+        width: 380px;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    button {
+        background: black;
+        color: white;
+        padding: 10px 25px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .error {
+        color: red;
+        font-size: 14px;
+        margin-top: -8px;
+        margin-left: 90px;
+    }
+</style>
+
+</head>
+<body>
+
+<form id="regForm">
+
+    <div class="row">
+        <label>Name:</label>
+        <input type="text" id="name">
+    </div>
+    <p id="nameErr" class="error"></p>
+
+    <div class="row">
+        <label>Password:</label>
+        <input type="password" id="password">
+    </div>
+    <p id="passErr" class="error"></p>
+
+    <div class="row">
+        <label>Email:</label>
+        <input type="email" id="email">
+    </div>
+    <p id="emailErr" class="error"></p>
+
+    <div class="row">
+        <label>Phone:</label>
+        <input type="tel" id="phone">
+    </div>
+    <p id="phoneErr" class="error"></p>
+
+    <div class="row">
+        <label>Sex:</label>
+        <div>
+            <input type="radio" name="sex" value="male"> Male
+            <input type="radio" name="sex" value="female"> Female
+            <input type="radio" name="sex" value="other"> Other
+        </div>
+    </div>
+    <p id="sexErr" class="error"></p>
+
+    <div class="row">
+        <label>DOB:</label>
+        <div>
+            <select id="day">
+                <option>Day</option>
+                <script>
+                    for(let i=1; i<=31; i++){
+                        document.write(`<option>${i}</option>`)
+                    }
+                </script>
+            </select>
+
+            <select id="month">
+                <option>Month</option>
+                <option>January</option><option>February</option><option>March</option>
+                <option>April</option><option>May</option><option>June</option>
+                <option>July</option><option>August</option><option>September</option>
+                <option>October</option><option>November</option><option>December</option>
+            </select>
+
+            <select id="year">
+                <option>Year</option>
+                <script>
+                    for(let y=2000; y<=2024; y++){
+                        document.write(`<option>${y}</option>`)
+                    }
+                </script>
+            </select>
+        </div>
+    </div>
+    <p id="dobErr" class="error"></p>
+
+    <div class="row">
+        <label>Languages:</label>
+        <div>
+            <input type="checkbox" class="lang" value="English"> English
+            <input type="checkbox" class="lang" value="Telugu"> Telugu
+            <input type="checkbox" class="lang" value="Hindi"> Hindi
+            <input type="checkbox" class="lang" value="Tamil"> Tamil
+        </div>
+    </div>
+    <p id="langErr" class="error"></p>
+
+    <div class="row">
+        <label>Address:</label>
+        <textarea id="address" rows="3" cols="25"></textarea>
+    </div>
+    <p id="addrErr" class="error"></p>
+
+    <button type="submit">Register</button>
+
+</form>
+
+<script src="/Javascript/exp6.js"></script>
+<script src="/Javascript/exp7.js"></script>
+
+</body>
+</html>
